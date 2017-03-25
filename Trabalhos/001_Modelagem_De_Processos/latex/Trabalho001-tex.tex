@@ -1,109 +1,58 @@
-%% abtex2-modelo-trabalho-academico.tex, v<VERSION> laurocesar
-%% Copyright 2012-<COPYRIGHT_YEAR> by abnTeX2 group at http://www.abntex.net.br/ 
-%%
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%   http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2005/12/01 or later.
-%%
-%% This work has the LPPL maintenance status `maintained'.
-%% 
-%% The Current Maintainer of this work is the abnTeX2 team, led
-%% by Lauro César Araujo. Further information are available on 
-%% http://www.abntex.net.br/
-%%
-%% This work consists of the files abntex2-modelo-trabalho-academico.tex,
-%% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
-%%
-
-% ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-% abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
-% mestrado e trabalhos monograficos em geral) em conformidade com 
-% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
-% Apresentacao
-% ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-
 \documentclass[
-	% -- opções da classe memoir --
-	12pt,				% tamanho da fonte
-	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	oneside,			% para impressão em recto e verso. Oposto a oneside
-	a4paper,			% tamanho do papel. 
-	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
-	% -- opções do pacote babel --
-	english,			% idioma adicional para hifenização
-	french,				% idioma adicional para hifenização
-	spanish,			% idioma adicional para hifenização
-	brazil				% o último idioma é o principal do documento
-	]{abntex2}
+    % -- opções da classe memoir --
+    article,            % indica que é um artigo acadêmico
+    11pt,               % tamanho da fonte
+    oneside,            % para impressão apenas no verso. Oposto a twoside
+    a4paper,            % tamanho do papel. 
+    % -- opções da classe abntex2 --
+    %chapter=TITLE,     % títulos de capítulos convertidos em letras maiúsculas
+    %section=TITLE,     % títulos de seções convertidos em letras maiúsculas
+    %subsection=TITLE,  % títulos de subseções convertidos em letras maiúsculas
+    %subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
+    % -- opções do pacote babel --
+    english,            % idioma adicional para hifenização
+    brazil,             % o último idioma é o principal do documento
+    sumario=tradicional
+    ]{abntex2}
+
 
 % ---
-% Pacotes básicos 
+% PACOTES
 % ---
-\usepackage{lmodern}			% Usa a fonte Latin Modern			
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color}				% Controle das cores
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{microtype} 			% para melhorias de justificação
+
 % ---
-		
+% Pacotes fundamentais 
+% ---
+\usepackage{lmodern}            % Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}        % Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}     % Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}        % Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl}            % Lista de simbolos
+\usepackage{color}              % Controle das cores
+\usepackage{graphicx}           % Inclusão de gráficos
+\usepackage{microtype}          % para melhorias de justificação
+% ---
+        
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
-\usepackage{lipsum}				% para geração de dummy text
+\usepackage{lipsum}             % para geração de dummy text
 % ---
-
+        
 % ---
 % Pacotes de citações
 % ---
-\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
-
-% --- 
-% CONFIGURAÇÕES DE PACOTES
-% --- 
-
+\usepackage[brazilian,hyperpageref]{backref}     % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}   % Citações padrão ABNT
 % ---
-% Configurações do pacote backref
-% Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
-% Texto padrão antes do número das páginas
-\renewcommand{\backref}{}
-% Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		Citado na página #2.%
-	\else
-		Citado #1 vezes nas páginas #2.%
-	\fi}%
-% ---
-
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Modelagem de processo}
-\autor{Daniel Yoshizawa \\ Jacqueline Cardozo \\ João Pedro Carvalho \\ Amanda Aquino}
+\titulo{Modelagem de Processo}
+\autor{Daniel Yoshizawa \\ Jacqueline Cardozo \\ João Pedro Becker Carvalho \\ Amanda Christoval da Veiga de Aquino}
 \local{Brasil}
 \data{Florianópolis, 2017}
-% O preambulo deve conter o tipo do trabalho, o objetivo, 
-% o nome da instituição e a área de concentração 
-%\preambulo{Modelo canônico de trabalho monográfico acadêmico em conformidade com
-%as normas ABNT apresentado à comunidade de usuários \LaTeX.}
 % ---
-
 
 % ---
 % Configurações de aparência do PDF final
@@ -114,48 +63,34 @@
 % informações do PDF
 \makeatletter
 \hypersetup{
-     	%pagebackref=true,
-		pdftitle={\@title}, 
-		pdfauthor={\@author},
-    	pdfsubject={\imprimirpreambulo},
-	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
-		colorlinks=true,       		% false: boxed links; true: colored links
-    	linkcolor=blue,          	% color of internal links
-    	citecolor=blue,        		% color of links to bibliography
-    	filecolor=magenta,      		% color of file links
-		urlcolor=blue,
-		bookmarksdepth=4
+        %pagebackref=true,
+        pdftitle={\@title}, 
+        pdfauthor={\@author},
+        pdfsubject={Modelo de artigo científico com abnTeX2},
+        pdfcreator={LaTeX with abnTeX2},
+        pdfkeywords={abnt}{latex}{abntex}{abntex2}{atigo científico}, 
+        colorlinks=true,            % false: boxed links; true: colored links
+        linkcolor=blue,             % color of internal links
+        citecolor=blue,             % color of links to bibliography
+        filecolor=magenta,              % color of file links
+        urlcolor=blue,
+        bookmarksdepth=4
 }
 \makeatother
 % --- 
 
 % ---
-% Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
-% em um página em branco. Ver https://github.com/abntex/abntex2/issues/170
-\makeatletter
-\setlength{\@fptop}{5pt} % Set distance from top of page to first float
-\makeatother
+% compila o indice
+% ---
+\makeindex
 % ---
 
 % ---
-% Possibilita criação de Quadros e Lista de quadros.
-% Ver https://github.com/abntex/abntex2/issues/176
-%
-\newcommand{\quadroname}{Quadro}
-\newcommand{\listofquadrosname}{Lista de quadros}
-
-\newfloat[chapter]{quadro}{loq}{\quadroname}
-\newlistof{listofquadros}{loq}{\listofquadrosname}
-\newlistentry{quadro}{loq}{0}
-
-% configurações para atender às regras da ABNT
-\setfloatadjustment{quadro}{\centering}
-\counterwithout{quadro}{chapter}
-\renewcommand{\cftquadroname}{\quadroname\space} 
-\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
-
-\setfloatlocations{quadro}{hbtp} % Ver https://github.com/abntex/abntex2/issues/176
+% Altera as margens padrões
+% ---
+\setlrmarginsandblock{3cm}{3cm}{*}
+\setulmarginsandblock{3cm}{3cm}{*}
+\checkandfixthelayout
 % ---
 
 % --- 
@@ -168,20 +103,13 @@
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.2cm}  % tente também \onelineskip
 
-% ---
-% compila o indice
-% ---
-\makeindex
-% ---
+% Espaçamento simples
+\SingleSpacing
 
 % ----
 % Início do documento
 % ----
 \begin{document}
-
-% Seleciona o idioma do documento (conforme pacotes do babel)
-%\selectlanguage{english}
-\selectlanguage{brazil}
 
 % Retira espaço extra obsoleto entre as frases.
 \frenchspacing 
@@ -189,541 +117,94 @@
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
 % ----------------------------------------------------------
-% \pretextual
 
-% ---
-% Capa
-% ---
-\imprimircapa
-% ---
-
-% ---
-% Folha de rosto
-% (o * indica que haverá a ficha bibliográfica)
-% ---
-%\imprimirfolhaderosto*
-% ---
-
-% ---
-% Inserir a ficha bibliografica
-% ---
-
-% Isto é um exemplo de Ficha Catalográfica, ou ``Dados internacionais de
-% catalogação-na-publicação''. Você pode utilizar este modelo como referência. 
-% Porém, provavelmente a biblioteca da sua universidade lhe fornecerá um PDF
-% com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver
-% com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
-% o conteúdo de implementação deste arquivo pelo comando abaixo:
+%---
 %
-% \begin{fichacatalografica}
-%     \includepdf{fig_ficha_catalografica.pdf}
-% \end{fichacatalografica}
-
-\begin{fichacatalografica}
-	\sffamily
-	\vspace*{\fill}					% Posição vertical
-	\begin{center}					% Minipage Centralizado
-	\fbox{\begin{minipage}[c][8cm]{13.5cm}		% Largura
-	\small
-	\imprimirautor
-	%Sobrenome, Nome do autor
-	
-	\hspace{0.5cm} \imprimirtitulo  / \imprimirautor. --
-	\imprimirlocal, \imprimirdata-
-	
-	\hspace{0.5cm} \thelastpage p. : il. (algumas color.) ; 30 cm.\\
-	
-	\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
-	
-	\hspace{0.5cm}
-	\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\imprimirinstituicao,
-	\imprimirdata.}\\
-	
-	\hspace{0.5cm}
-		1. Palavra-chave1.
-		2. Palavra-chave2.
-		2. Palavra-chave3.
-		I. Orientador.
-		II. Universidade xxx.
-		III. Faculdade de xxx.
-		IV. Título 			
-	\end{minipage}}
-	\end{center}
-\end{fichacatalografica}
-% ---
-
-% ---
-% Inserir errata
-% ---
-\begin{errata}
-Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. Exemplo:
-
-\vspace{\onelineskip}
-
-FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
-reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma
-rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
-cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
-Zootecnia, Universidade de São Paulo, São Paulo, 2011.
-
-\begin{table}[htb]
-\center
-\footnotesize
-\begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
-  \hline
-   \textbf{Folha} & \textbf{Linha}  & \textbf{Onde se lê}  & \textbf{Leia-se}  \\
-    \hline
-    1 & 10 & auto-conclavo & autoconclavo\\
-   \hline
-\end{tabular}
-\end{table}
-
-\end{errata}
-% ---
-
-% ---
-% Inserir folha de aprovação
-% ---
-
-% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
-% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
-% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
-% imagem da página assinada pela banca com o comando abaixo:
+% Se desejar escrever o artigo em duas colunas, descomente a linha abaixo
+% e a linha com o texto ``FIM DE ARTIGO EM DUAS COLUNAS''.
+% \twocolumn[           % INICIO DE ARTIGO EM DUAS COLUNAS
 %
-% \begin{folhadeaprovacao}
-% \includepdf{folhadeaprovacao_final.pdf}
-% \end{folhadeaprovacao}
-%
-\begin{folhadeaprovacao}
-
-  \begin{center}
-    {\ABNTEXchapterfont\large\imprimirautor}
-
-    \vspace*{\fill}\vspace*{\fill}
-    \begin{center}
-      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
-    \end{center}
-    \vspace*{\fill}
-    
-    \hspace{.45\textwidth}
-    \begin{minipage}{.5\textwidth}
-        \imprimirpreambulo
-    \end{minipage}%
-    \vspace*{\fill}
-   \end{center}
-        
-   Trabalho aprovado. \imprimirlocal, 24 de novembro de 2012:
-
-   \assinatura{\textbf{\imprimirorientador} \\ Orientador} 
-   \assinatura{\textbf{Professor} \\ Convidado 1}
-   \assinatura{\textbf{Professor} \\ Convidado 2}
-   %\assinatura{\textbf{Professor} \\ Convidado 3}
-   %\assinatura{\textbf{Professor} \\ Convidado 4}
-      
-   \begin{center}
-    \vspace*{0.5cm}
-    {\large\imprimirlocal}
-    \par
-    {\large\imprimirdata}
-    \vspace*{1cm}
-  \end{center}
-  
-\end{folhadeaprovacao}
-% ---
-
-% ---
-% Dedicatória
-% ---
-\begin{dedicatoria}
-   \vspace*{\fill}
-   \centering
-   \noindent
-   \textit{ Este trabalho é dedicado às crianças adultas que,\\
-   quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
-\end{dedicatoria}
-% ---
-
-% ---
-% Agradecimentos
-% ---
-\begin{agradecimentos}
-Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson,
-Leslie H. Watter, Bruno Parente Lima, Flávio de Vasconcellos Corrêa, Otavio Real
-Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
-projeto abn\TeX\ foram extraídos de
-\url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que
-contribuíram para que a produção de trabalhos acadêmicos conforme
-as normas ABNT com \LaTeX\ fosse possível.
-
-Agradecimentos especiais são direcionados ao Centro de Pesquisa em Arquitetura
-da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de
-Brasília (CPAI), ao grupo de usuários
-\emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos
-novos voluntários do grupo
-\emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
-\url{http://www.abntex.net.br/}}~que contribuíram e que ainda
-contribuirão para a evolução do \abnTeX.
-
-\end{agradecimentos}
-% ---
-
-% ---
-% Epígrafe
-% ---
-\begin{epigrafe}
-    \vspace*{\fill}
-	\begin{flushright}
-		\textit{``Não vos amoldeis às estruturas deste mundo, \\
-		mas transformai-vos pela renovação da mente, \\
-		a fim de distinguir qual é a vontade de Deus: \\
-		o que é bom, o que Lhe é agradável, o que é perfeito.\\
-		(Bíblia Sagrada, Romanos 12, 2)}
-	\end{flushright}
-\end{epigrafe}
-% ---
-
-% ---
-% RESUMOS
-% ---
+%---
+% página de titulo
+\maketitle
 
 % resumo em português
-\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-\begin{resumo}
- Segundo a \citeonline[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
- objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
- destes itens dependem do tipo de resumo (informativo ou indicativo) e do
- tratamento que cada item recebe no documento original. O resumo deve ser
- precedido da referência do documento, com exceção do resumo inserido no
- próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
- resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
- ponto e finalizadas também por ponto.
-
- \textbf{Palavras-chave}: latex. abntex. editoração de texto.
-\end{resumo}
-
-% resumo em inglês
-\begin{resumo}[Abstract]
- \begin{otherlanguage*}{english}
-   This is the english abstract.
-
-   \vspace{\onelineskip}
+%\begin{resumoumacoluna}
+% \vspace{\onelineskip}
  
-   \noindent 
-   \textbf{Keywords}: latex. abntex. text editoration.
- \end{otherlanguage*}
-\end{resumo}
+ %\noindent
+ %\textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+%\end{resumoumacoluna}
 
-% resumo em francês 
-\begin{resumo}[Résumé]
- \begin{otherlanguage*}{french}
-    Il s'agit d'un résumé en français.
- 
-   \textbf{Mots-clés}: latex. abntex. publication de textes.
- \end{otherlanguage*}
-\end{resumo}
-
-% resumo em espanhol
-\begin{resumo}[Resumen]
- \begin{otherlanguage*}{spanish}
-   Este es el resumen en español.
-  
-   \textbf{Palabras clave}: latex. abntex. publicación de textos.
- \end{otherlanguage*}
-\end{resumo}
+% ]                 % FIM DE ARTIGO EM DUAS COLUNAS
 % ---
-
-% ---
-% inserir lista de ilustrações
-% ---
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
-\cleardoublepage
-% ---
-
-% ---
-% inserir lista de quadros
-% ---
-\pdfbookmark[0]{\listofquadrosname}{loq}
-\listofquadros*
-\cleardoublepage
-% ---
-
-% ---
-% inserir lista de tabelas
-% ---
-\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
-\cleardoublepage
-% ---
-
-% ---
-% inserir lista de abreviaturas e siglas
-% ---
-\begin{siglas}
-  \item[ABNT] Associação Brasileira de Normas Técnicas
-  \item[abnTeX] ABsurdas Normas para TeX
-\end{siglas}
-% ---
-
-% ---
-% inserir lista de símbolos
-% ---
-\begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
-\end{simbolos}
-% ---
-
-% ---
-% inserir o sumario
-% ---
-\pdfbookmark[0]{\contentsname}{toc}
-\tableofcontents*
-\cleardoublepage
-% ---
-
-
 
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
 % ----------------------------------------------------------
 \textual
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+%\section*{Introdução}
+%\addcontentsline{toc}{section}{Introdução}
 
 % ----------------------------------------------------------
-% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+% Seção de explicações
 % ----------------------------------------------------------
-\chapter*[Introdução]{Introdução}
-\addcontentsline{toc}{chapter}{Introdução}
-% ----------------------------------------------------------
+\section{Departamentos}
 
-Este documento e seu código-fonte são exemplos de referência de uso da classe
-\textsf{abntex2} e do pacote \textsf{abntex2cite}. O documento 
-exemplifica a elaboração de trabalho acadêmico (tese, dissertação e outros do
-gênero) produzido conforme a ABNT NBR 14724:2011 \emph{Informação e documentação
-- Trabalhos acadêmicos - Apresentação}.
+\subsection{Quality Assurance }
 
-A expressão ``Modelo Canônico'' é utilizada para indicar que \abnTeX\ não é
-modelo específico de nenhuma universidade ou instituição, mas que implementa tão
-somente os requisitos das normas da ABNT. Uma lista completa das normas
-observadas pelo \abnTeX\ é apresentada em \citeonline{abntex2classe}.
+Setor onde se encontra o Product Owner, P.O., que tem como função analisar as necessidades do mercado e elaborar funcionalidades e cenários que serão repassados a equipe de desenvolvimento como diretivas para o aperfeiçoamento do produto, neste setor também está alocada a equipe de testes que cuidam do teste manual, automatizado, captura e reporte de bugs.
 
-Sinta-se convidado a participar do projeto \abnTeX! Acesse o site do projeto em
-\url{http://www.abntex.net.br/}. Também fique livre para conhecer,
-estudar, alterar e redistribuir o trabalho do \abnTeX, desde que os arquivos
-modificados tenham seus nomes alterados e que os créditos sejam dados aos
-autores originais, nos termos da ``The \LaTeX\ Project Public
-License''\footnote{\url{http://www.latex-project.org/lppl.txt}}.
+O P.O. pode ser um funcionário da empresa, preferencialmente com experiência na área em que o produto desejado está inserido, porém caso não seja possível pode se contratar alguém de outra área que esteja interessado em assumir este papel, nada impede que até mesmo um desenvolvedor assuma tal papel dependendo da solução, caso se considerem produtos novos e/ou experimentais pode ser melhor utilizar alguém da equipe para validar a ideia com um protótipo antes de alocar mais recursos que podem não valer a pena, isso vai contra algumas definições do SCRUM porém se mostra mais realístico para um cenário como este.
 
-Encorajamos que sejam realizadas customizações específicas deste exemplo para
-universidades e outras instituições --- como capas, folha de aprovação, etc.
-Porém, recomendamos que ao invés de se alterar diretamente os arquivos do
-\abnTeX, distribua-se arquivos com as respectivas customizações.
-Isso permite que futuras versões do \abnTeX~não se tornem automaticamente
-incompatíveis com as customizações promovidas. Consulte
-\citeonline{abntex2-wiki-como-customizar} par mais informações.
+Por se tratar de uma software house muitas vezes o P.O. é o próprio cliente, porém esse não é o cenário ideal uma vez que o tempo de resposta e enquadramento com a realidade da empresa se torna mais complicado, idealmente teríamos um P.O. interno que estaria em contato com este cliente para possíveis alinhamentos.
 
-Este documento deve ser utilizado como complemento dos manuais do \abnTeX\ 
-\cite{abntex2classe,abntex2cite,abntex2cite-alf} e da classe \textsf{memoir}
-\cite{memoir}. 
+Dentre as funções do P.O. se encontrar a pesquisa por necessidades do mercado relacionadas ao produto em desenvolvimento, como pesquisas com potenciais clientes, análise de produtos já existentes no mercado e criação de features que possam vir a favorecer o usuário final.
 
-Esperamos, sinceramente, que o \abnTeX\ aprimore a qualidade do trabalho que
-você produzirá, de modo que o principal esforço seja concentrado no principal:
-na contribuição científica.
+Também cabe ao P.O. o teste das funcionalidades retornadas pelo desenvolvimento para verificar se está tudo de acordo com o que foi pedido e detectar algum bug inicial.
 
-Equipe \abnTeX 
+Para o sistema de gerência de atividades, é utilizado o sistema de tickets, sendo este definido na parte X, que será utilizado como principal ferramenta de gerência de tempo e atividades por todas as equipes, assim como definições das milestones, histórico de atividades e como uma das formas de documentação adotadas.
 
-Lauro César Araujo
+O sistema de tickets é extremamente importante para garantir a maior corretude na troca de informações entre as equipes, o P.O. deve criar tickets para as atividades que deseja que sejam realizadas, assim como eventuais bugs que também devem ser reportados pela equipe de testes, depois deve negociar com o Scrum Master quais tickets vão fazer parte da próxima sprint e uma reunião de pré sprint, também devem ser utilizados para reportar possíveis erros em atividades realizadas, assim se mantém um histórico de mudanças e uma documentação acessíveis por todos como referência para situações parecidas.
 
-% ----------------------------------------------------------
-% PARTE
-% ----------------------------------------------------------
-\part{Preparação da pesquisa}
-% ----------------------------------------------------------
+\subsection{Development Team}
+
+As funções da equipe de desenvolvimento são diversas e devem se manter alinhadas com as requisições do P.O., consideração importante considerando que muitas vezes o interesse do desenvolvedor é distinto do que o mercado considera necessário, com pessoas com perfil mais técnico
+muitas vezes se tem maior foco em soluções para problemas tecnológicos do que voltados para o mercado, por isso é função do Scrum Master e da equipe de desenvolvimento negociar com o P.O. para encontrar um caminho melhor para os dois lados, assim gerando melhorias na infraestrutura
+do software e até mesmo da empresa enquanto continuam a gera valor para o mercado.
+
+Cabe ao desenvolvedor estimar as horas que levará para determinada atividade, dessa maneira é possível melhorar o planejamento das sprints podendo considerar que atividades similares vão levar o mesmo tempo aproximadamente e também funciona como mecanismo de controle de evolução
+do desenvolvedor, lembrando que isto nunca deve ser usado como métrica para avaliação de um funcionário, inclusive acesso a essa informação deveria ser negado a qualquer pessoa fora das equipes envolvidas diretamente com dado projeto, removendo assim uma parte  da pressão 
+sobre o funcionário para aumentar a produtividade.
+
+O sistema de atribuição de tarefas deve seguir o mecanismo de pull, onde cada desenvolvedor escolhe a atividade que se julga capas e esta com vontade de fazer, jamais utilizar o sistema de push, este pode causar desconforto nas pessoas por se tratar de imposição, claro que existem atividades
+que ninguêm tem interesse em fazer porem são necessárias para isso é necessário conversar com a equipe e chegar a um acordo de quem pode fazer tal atividade, resolvendo no dialogo é na maioria das vezes rápido e não gera problemas para a equipe, por outro lado o sistema de push causa pressão
+sobre a equipe e gera a falsa impressão de superioridade de membros da equipe, o que não existe, a metodologia adotada aqui é totalmente horizontal em relação aos membros de todas as equipes descritas neste documento.
+
+Todas as técnicas de desenvolvimento podem ser utilizadas, isso fica a cargo da equipe decidir como quer realizar as atividades, utilizar técnicas de eXtreme Programming, XP, como pair programming, code review, TDD, BDD, o que for melhor para a equipe deve ser adotado, não existe obrigatoriedade
+da criação de testes unitários, black boxes, ou de seguir qualquer técnica de desenvolvimento, este aspecto é totalmente livre, apenas o aberto dialogo e cooperação é incentivado para a melhoria do time como um todo. A justificativa para não definir técnicas obrigatórias é de que cada desenvolvedor deve
+se sentir confortável com o seu trabalho e ja está sendo adotada uma metodologia um tanto quanto restritiva para o ciclo de desenvolvimento, sabemos dos possiveis problemas que essa abordagem pode gerar, como reinserção de bugs, nivelamento desigual dos membros da equipe, código de baixa qualidade, porem com o tempo e aperfeiçoamento da equipe esses problemas tendem a diminuir e a satisfação do desenvolvedor será maior pois as escolhas foram dele e este seguiu o caminho que lhe pareceu melhor.
+
+ 
+
+
+
 
 % ---
-% Capitulo com exemplos de comandos inseridos de arquivo externo 
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
 % ---
-\include{abntex2-modelo-include-comandos}
+\bookmarksetup{startatroot}% 
 % ---
-
-\chapter{Conteúdos específicos do modelo de trabalho acadêmico}\label{cap_trabalho_academico}
-
-\section{Quadros}
-
-Este modelo vem com o ambiente \texttt{quadro} e impressão de Lista de quadros 
-configurados por padrão. Verifique um exemplo de utilização:
-
-\begin{quadro}[htb]
-\caption{\label{quadro_exemplo}Exemplo de quadro}
-\begin{tabular}{|c|c|c|c|}
-	\hline
-	\textbf{Pessoa} & \textbf{Idade} & \textbf{Peso} & \textbf{Altura} \\ \hline
-	Marcos & 26    & 68   & 178    \\ \hline
-	Ivone  & 22    & 57   & 162    \\ \hline
-	...    & ...   & ...  & ...    \\ \hline
-	Sueli  & 40    & 65   & 153    \\ \hline
-\end{tabular}
-\fonte{Autor.}
-\end{quadro}
-
-Este parágrafo apresenta como referenciar o quadro no texto, requisito
-obrigatório da ABNT. 
-Primeira opção, utilizando \texttt{autoref}: Ver o \autoref{quadro_exemplo}. 
-Segunda opção, utilizando  \texttt{ref}: Ver o Quadro \ref{quadro_exemplo}.
-
-% ----------------------------------------------------------
-% PARTE
-% ----------------------------------------------------------
-\part{Referenciais teóricos}
-% ----------------------------------------------------------
-
-% ---
-% Capitulo de revisão de literatura
-% ---
-\chapter{Lorem ipsum dolor sit amet}
-% ---
-
-% ---
-\section{Aliquam vestibulum fringilla lorem}
-% ---
-
-\lipsum[1]
-
-\lipsum[2-3]
-
-% ----------------------------------------------------------
-% PARTE
-% ----------------------------------------------------------
-\part{Resultados}
-% ----------------------------------------------------------
-
-% ---
-% primeiro capitulo de Resultados
-% ---
-\chapter{Lectus lobortis condimentum}
-% ---
-
-% ---
-\section{Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-posuere cubilia Curae}
-% ---
-
-\lipsum[21-22]
-
-% ---
-% segundo capitulo de Resultados
-% ---
-\chapter{Nam sed tellus sit amet lectus urna ullamcorper tristique interdum
-elementum}
-% ---
-
-% ---
-\section{Pellentesque sit amet pede ac sem eleifend consectetuer}
-% ---
-
-\lipsum[24]
-
-% ----------------------------------------------------------
-% Finaliza a parte no bookmark do PDF
-% para que se inicie o bookmark na raiz
-% e adiciona espaço de parte no Sumário
-% ----------------------------------------------------------
-\phantompart
 
 % ---
 % Conclusão
 % ---
-\chapter{Conclusão}
-% ---
-
-\lipsum[31-33]
-
-% ----------------------------------------------------------
-% ELEMENTOS PÓS-TEXTUAIS
-% ----------------------------------------------------------
-\postextual
-% ----------------------------------------------------------
-
-% ----------------------------------------------------------
-% Referências bibliográficas
-% ----------------------------------------------------------
-\bibliography{abntex2-modelo-references}
-
-% ----------------------------------------------------------
-% Glossário
-% ----------------------------------------------------------
-%
-% Consulte o manual da classe abntex2 para orientações sobre o glossário.
-%
-%\glossary
-
-% ----------------------------------------------------------
-% Apêndices
-% ----------------------------------------------------------
-
-% ---
-% Inicia os apêndices
-% ---
-\begin{apendicesenv}
-
-% Imprime uma página indicando o início dos apêndices
-\partapendices
-
-% ----------------------------------------------------------
-\chapter{Quisque libero justo}
-% ----------------------------------------------------------
-
-\lipsum[50]
-
-% ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-ac pretium ante justo a nulla curabitur tristique arcu eu metus}
-% ----------------------------------------------------------
-\lipsum[55-57]
-
-\end{apendicesenv}
-% ---
+%\section*{Considerações finais}
+%\addcontentsline{toc}{section}{Considerações finais}
 
 
-% ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
-
-% ---
-% Inicia os anexos
-% ---
-\begin{anexosenv}
-
-% Imprime uma página indicando o início dos anexos
-\partanexos
-
-% ---
-\chapter{Morbi ultrices rutrum lorem.}
-% ---
-\lipsum[30]
-
-% ---
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
-parturient montes nascetur ridiculus mus}
-% ---
-
-\lipsum[31]
-
-% ---
-\chapter{Fusce facilisis lacinia dui}
-% ---
-
-\lipsum[32]
-
-\end{anexosenv}
-
-%---------------------------------------------------------------------
-% INDICE REMISSIVO
-%---------------------------------------------------------------------
-\phantompart
-\printindex
-%---------------------------------------------------------------------
 
 \end{document}
