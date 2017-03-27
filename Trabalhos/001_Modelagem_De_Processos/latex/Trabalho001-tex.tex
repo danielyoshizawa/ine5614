@@ -181,15 +181,25 @@ do desenvolvedor, lembrando que isto nunca deve ser usado como métrica para ava
 sobre o funcionário para aumentar a produtividade.
 
 O sistema de atribuição de tarefas deve seguir o mecanismo de pull, onde cada desenvolvedor escolhe a atividade que se julga capas e esta com vontade de fazer, jamais utilizar o sistema de push, este pode causar desconforto nas pessoas por se tratar de imposição, claro que existem atividades
-que ninguêm tem interesse em fazer porem são necessárias para isso é necessário conversar com a equipe e chegar a um acordo de quem pode fazer tal atividade, resolvendo no dialogo é na maioria das vezes rápido e não gera problemas para a equipe, por outro lado o sistema de push causa pressão
+que ninguém tem interesse em fazer porem são necessárias para isso é necessário conversar com a equipe e chegar a um acordo de quem pode fazer tal atividade, resolvendo no dialogo é na maioria das vezes rápido e não gera problemas para a equipe, por outro lado o sistema de push causa pressão
 sobre a equipe e gera a falsa impressão de superioridade de membros da equipe, o que não existe, a metodologia adotada aqui é totalmente horizontal em relação aos membros de todas as equipes descritas neste documento.
 
 Todas as técnicas de desenvolvimento podem ser utilizadas, isso fica a cargo da equipe decidir como quer realizar as atividades, utilizar técnicas de eXtreme Programming, XP, como pair programming, code review, TDD, BDD, o que for melhor para a equipe deve ser adotado, não existe obrigatoriedade
 da criação de testes unitários, black boxes, ou de seguir qualquer técnica de desenvolvimento, este aspecto é totalmente livre, apenas o aberto dialogo e cooperação é incentivado para a melhoria do time como um todo. A justificativa para não definir técnicas obrigatórias é de que cada desenvolvedor deve
-se sentir confortável com o seu trabalho e ja está sendo adotada uma metodologia um tanto quanto restritiva para o ciclo de desenvolvimento, sabemos dos possiveis problemas que essa abordagem pode gerar, como reinserção de bugs, nivelamento desigual dos membros da equipe, código de baixa qualidade, porem com o tempo e aperfeiçoamento da equipe esses problemas tendem a diminuir e a satisfação do desenvolvedor será maior pois as escolhas foram dele e este seguiu o caminho que lhe pareceu melhor.
+se sentir confortável com o seu trabalho e ja está sendo adotada uma metodologia um tanto quanto restritiva para o ciclo de desenvolvimento, sabemos dos possíveis problemas que essa abordagem pode gerar, como reinserção de bugs, nivelamento desigual dos membros da equipe, código de baixa qualidade, porem com o tempo e aperfeiçoamento da equipe esses problemas tendem a diminuir e a satisfação do desenvolvedor será maior pois as escolhas foram dele e este seguiu o caminho que lhe pareceu melhor.
 
  
+\subsection{Test Team}
 
+A equipe de testes deve realizar testes manuais, criar e executar scripts de testes automatizados, focando em encontrar falhas nas features implementadas e garantir a integridade do software. Para isso deve seguir roteiros que avaliam bordas, testes de sobrecarga, funcionalidades em cadeias se houver, assim como consistência no design da aplicação.
+
+Quando um erro é detectado pela equipe é necessário analisar  a origem do erro e criar um roteiro para poder reproduzir o erro, este deve ser repassado para a equipe de desenvolvimento através de tickets, caso o erro encontrado seja em uma feature conhecida que possui um ticket aberto em validação deve se retornar o ticket com o roteiro para reproduzir o erro, a definição de quando o ticket será retornado a sprint fica a cargo do P.O., Scrum Master e equipe de desenvolvimento, cabe apenas ao tester reportar o erro encontrado e como reproduzi-lo.
+
+Se a detecção de um erro for algum efeito colateral de outras mudanças, ou se o erro encontrado for considerado novo, então é aberto um ticket novo que vai para pré sprint, este deve conter o máximo de informações para facilitar a reprodução do erro pelos envolvidos.
+
+Também deve se rodar os testes automatizados com a maior frequência possível para detectar o quanto antes error que passaram despercebidos pelos testers, assim como garantir a integridade do software de maneira contínua, idealmente um servidor deve rodar os testes automatizados ao menos uma vez por dia, pode se utilizar um batch noturno para isso, caso haja um mecanismo de build contínuo, este só deve criar uma nova versão caso todos os testes estejam passando, aqui deve se considerar o uso de testes unitários caso tenham sido adotados pelo time de desenvolvimento.
+
+Em caso da funcionalidade estar de acordo com o esperado o tester pode fechar o ticket como válido e prosseguir para uma nova tarefa.
 
 
 
